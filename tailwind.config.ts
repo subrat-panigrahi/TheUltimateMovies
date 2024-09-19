@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
   content: [
@@ -14,6 +15,14 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addComponents }) {
+      addComponents({
+        '.primary-btn': {
+          '@apply text-white p-2 rounded bg-yellow-300 hover:bg-blue-600': {},
+        },
+      });
+    },
+  ],
 };
 export default config;

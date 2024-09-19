@@ -25,8 +25,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <link rel="preconnect" href="https://image.tmdb.org"/>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased p-4`}
       >
         {children}
       </body>
