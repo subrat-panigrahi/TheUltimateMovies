@@ -2,21 +2,19 @@
 import React from 'react'
 import Searchbar from './Searchbar';
 import ImageBuilder from '../../lib/components/ImageBuilder';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter, /*useSearchParams*/ } from 'next/navigation';
 import { Suspense } from 'react'
 
 export default function Header({value}) {
     const router = useRouter();
-    const searchParams = useSearchParams();
+    //const searchParams = useSearchParams();
 
   const appendQuery = (searchTerm) => {
     console.log('searchTerm', searchTerm);
     if(!searchTerm) {
         router.push('/');
     } else{
-        const currentParams = new URLSearchParams(searchParams);
-        currentParams.set('query', searchTerm);
-        router.push(`/search?${currentParams.toString()}`);
+        router.push(`/search?query=${searchTerm.toString()}`);
     }
    
   };
