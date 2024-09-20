@@ -9,9 +9,9 @@ export async function GET(request) {
       moviesUrl.searchParams.append('api_key', process.env.TMDB_API_KEY); // appends all the query params passed in the api.
       const searchResponse = await fetch(moviesUrl);
       if (!searchResponse.ok) {
-        return new Response(JSON.stringify({ message:`Failed to fetch Search response from tmdb`}), {
-          status: 500,
-        });
+          let err =  new Error(`HTTP error! status: ${searchResponse.status}`);
+          err.status = searchResponse.status;
+          throw err;
       }
       const data = await searchResponse.json();
       return new Response(JSON.stringify(data), {

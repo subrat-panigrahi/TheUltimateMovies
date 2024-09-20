@@ -8,9 +8,9 @@ export async function GET(request) {
       popularMoviesUrl.searchParams.append('api_key', process.env.TMDB_API_KEY);
       const popularMoviesResponse = await fetch(popularMoviesUrl);
       if (!popularMoviesResponse.ok) {
-        return new Response(JSON.stringify({ message: `Failed to fetch poplular movies from tmdb` }), {
-          status: 500
-        });
+        let err =  new Error(`HTTP error! status: ${popularMoviesResponse.status}`);
+        err.status = popularMoviesResponse.status;
+        throw err;
       }
 
       const data = await popularMoviesResponse.json();
@@ -20,7 +20,7 @@ export async function GET(request) {
       });
     } catch (error) {
       return new Response(JSON.stringify({ message: `Failed to fetch poplular movies`, error: error.message }), {
-        status: 500,
+        status: error.status || 500,
       });
     }
   }
