@@ -1,20 +1,15 @@
-import MovieList from './components/MovieList';
-// import {use} from 'react';
+import MovieListContainer from './homepage/container';
 import Header from './components/Header';
-
-async function fetchPopularMovies() {
-  const response = await fetch(`${process.env.BASE_URL}/api/movies`);
+// import { Suspense } from 'react';
+async function MoviesPage() {
+  const response = await fetch("https://api.themoviedb.org/3/movie/popular?language=en-US&page=1&api_key=52356ee2f53eb5738f1d63e73329f442",{ cache: 'no-store' });
   const movies = await response.json();
-  return movies;
-};
+  return (
+    <div>
+        <Header value={null} />
+        {<MovieListContainer movies={movies} /> }
+    </div>
+  );
+}
 
-
-export default async function MoviesPage(request) {
-    const movies = await fetchPopularMovies();
-    return (
-      <div>
-        <Header />
-        {<MovieList movies={movies} />}
-      </div>
-    );
-  }
+export default MoviesPage;

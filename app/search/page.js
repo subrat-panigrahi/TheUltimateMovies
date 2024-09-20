@@ -1,4 +1,4 @@
-import MovieList from '../components/MovieList';
+import SearchPageContainer from './container';
 // import {use} from 'react';
 import Header from '../components/Header';
 
@@ -9,14 +9,12 @@ async function fetchSearchMovies(query) {
 };
 
 export default async function MoviesPage(request) {
-  //f(request.searchParams['query']) {
     const query = request.searchParams['query']|| '';
     const movies = await fetchSearchMovies(query);
     return (
       <div>
         <Header value={query} />
-        {<MovieList movies={movies} query={query}/>}
+        {<SearchPageContainer movies={movies} query={query}/>}
       </div>
     );
-  //}
 }
