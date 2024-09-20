@@ -6,7 +6,7 @@ import MovieList from '../components/MovieList';
 export default function SearchPageContainer({ movies, query }) {
     const [moviesToRender, setMoviesToRender] = useState(movies);
     const {movieSearchResponse, isLoading,/* error,*/ searchMovies} = useMovieSearch();
-
+    
     const fetchNextPage = async () => {
           searchMovies(query, moviesToRender.page + 1);
       };
@@ -20,7 +20,11 @@ export default function SearchPageContainer({ movies, query }) {
         } else {
           console.log('movieSearchResponse', movieSearchResponse);
         }
-      }, [movieSearchResponse.page]);
+      }, [movieSearchResponse]);
+
+      useEffect(() => {
+        setMoviesToRender(movies);
+      }, [movies]);
 
     return (
         <div>
