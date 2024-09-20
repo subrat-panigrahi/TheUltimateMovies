@@ -19,7 +19,7 @@ const config = {
     function ({ addComponents }) {
       addComponents({
         '.primary-btn': {
-          '@apply text-white p-2 rounded bg-yellow-300 hover:bg-blue-600': {},
+          '@apply p-2 rounded bg-yellow-300 hover:bg-blue-600 text-amber-600 font-semibold': {},
         },
       });
     },
