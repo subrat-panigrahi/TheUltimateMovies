@@ -1,5 +1,5 @@
 import MovieListContainer from './homepage/container';
-import Header from './components/Header';
+// import Header from './components/Header';
 // import { Suspense } from 'react';
 
 async function fetchPopularMovies() {
@@ -19,7 +19,6 @@ async function MoviesPage() {
   const movies = await fetchPopularMovies();
   return (
     <div>
-      <Header value={null} />
       {<MovieListContainer movies={movies} />}
     </div>
   );

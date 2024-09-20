@@ -4,7 +4,7 @@ import { NO_RESULTS } from '../../lib/constants';
 import MovieCard from './MovieCard';
 
 export default function MovieList({ movies, fetchNextPage, isLoading }) {
-console.log('mounting');
+console.log('mounting',movies);
   if (movies && movies.results && movies.results.length === 0) {
     return (
       <div className='px-2 text-center'>

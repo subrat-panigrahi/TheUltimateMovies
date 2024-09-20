@@ -3,7 +3,7 @@ const nextConfig = {
     images: {
         domains: ['image.tmdb.org'],
     },
-    reactStrictMode: false,
+        reactStrictMode: false,
 };
 
 export default nextConfig;
