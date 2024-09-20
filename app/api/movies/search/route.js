@@ -1,4 +1,4 @@
-const TMDB_KEY = '52356ee2f53eb5738f1d63e73329f442';
+
 const MOVIES_DOMAIN = 'https://api.themoviedb.org';
 export async function GET(request) {
     try {
@@ -6,7 +6,7 @@ export async function GET(request) {
       new URL(request.url).searchParams.forEach((value, key) => {
         moviesUrl.searchParams.append(key, value);
       });
-      moviesUrl.searchParams.append('api_key', TMDB_KEY); // appends all the query params passed in the api.
+      moviesUrl.searchParams.append('api_key', process.env.TMDB_API_KEY); // appends all the query params passed in the api.
       const searchResponse = await fetch(moviesUrl);
       if (!searchResponse.ok) {
         return new Response(JSON.stringify({ message:`Failed to fetch Search response from tmdb`}), {

@@ -1,9 +1,8 @@
 import SearchPageContainer from './container';
-// import {use} from 'react';
 import Header from '../components/Header';
 
 async function fetchSearchMovies(query) {
-  const response = await fetch(`${process.env.BASE_URL}/api/movies/search?query=${query}`);
+  const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.TMDB_API_KEY}&query=${query}`, { cache: 'no-store' });
   const movies = await response.json();
   return movies;
 };
@@ -13,7 +12,7 @@ export default async function MoviesPage(request) {
     const movies = await fetchSearchMovies(query);
     return (
       <div>
-        <Header value={query} />
+        <Header value={query}/>
         {<SearchPageContainer movies={movies} query={query}/>}
       </div>
     );

@@ -1,4 +1,3 @@
-const TMDB_KEY = '52356ee2f53eb5738f1d63e73329f442';
 const POPULAR_MOVIES = 'https://api.themoviedb.org';
 export async function GET(request) {
     try {
@@ -6,7 +5,7 @@ export async function GET(request) {
       new URL(request.url).searchParams.forEach((value, key) => {
         popularMoviesUrl.searchParams.append(key, value);
       });
-      popularMoviesUrl.searchParams.append('api_key', TMDB_KEY);
+      popularMoviesUrl.searchParams.append('api_key', process.env.TMDB_API_KEY);
       const popularMoviesResponse = await fetch(popularMoviesUrl);
       if (!popularMoviesResponse.ok) {
         return new Response(JSON.stringify({ message: `Failed to fetch poplular movies from tmdb` }), {
