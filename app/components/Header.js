@@ -15,7 +15,7 @@ export default function Header() {
 
   };
   return (
-    <div className="max-w-4xl mx-auto p-2">
+    <div className="max-w-4xl mx-auto p-2 sticky top-0 bg-background">
       <ImageBuilder className='flex p-2' src='/images/logo_ultimate_movies.jpeg' width='100' height='100' fallbackSrc='/images/fallbackImage.jpg' alt='logo' />
       <Searchbar value={searchParams.get('query')} onSearch={(searchTerm) => {
         appendQuery(searchTerm);
