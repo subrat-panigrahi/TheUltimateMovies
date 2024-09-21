@@ -16,12 +16,12 @@ export default function MovieList({ movies, fetchNextPage, isLoading }) {
   return (
     <div>
       <ul>
-        { movies?.results?.map((movie) => (
-          <LazyLoad key={movie.id} height={200} offset={100} unmountIfInvisible once>
+        {movies?.results?.map((movie) => (
           <li key={movie.id}>
-            <MovieCard movie={movie} />
+            <LazyLoad key={movie.id} height={500} offset={500} unmountIfInvisible>
+              <MovieCard movie={movie} />
+            </LazyLoad>
           </li>
-          </LazyLoad>
         ))}
       </ul>
       <div className="text-center">{(movies.page < movies.total_pages) && <button onClick={() => { fetchNextPage() }} className='primary-btn'> {isLoading ? 'Loading...' : 'Next'} </button>}</div>
