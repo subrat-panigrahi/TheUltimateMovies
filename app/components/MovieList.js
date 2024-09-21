@@ -3,7 +3,7 @@ import React from 'react';
 import { NO_RESULTS } from '../../lib/constants';
 import MovieCard from './MovieCard';
 
-export default function MovieList({ movies, fetchNextPage, isLoading, title }) {
+export default function MovieList({ movies, fetchNextPage, isLoading }) {
   if (movies?.results?.length === 0) {
     return (
       <div className='px-2 text-center'>

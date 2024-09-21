@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MOVIE_SEARCH_API } from '../../lib/constants';
+import fetchWithTimeout from '../../lib/utils';
 
 const useMovieSearch = () => {
     const [isLoading, setLoading] = useState(false);
@@ -9,9 +10,9 @@ const useMovieSearch = () => {
         try {
             const url = `${MOVIE_SEARCH_API}?query=${query}&page=${page}`;
             setLoading(true);
-            const res = await fetch(url);
-            const data = await res.json();
-            setMovieSearchResponse(data);
+            const res = await fetchWithTimeout(url);
+            console.log('res', res);
+            setMovieSearchResponse(res);
             setLoading(false);
         } catch (e) {
             setError(e);
