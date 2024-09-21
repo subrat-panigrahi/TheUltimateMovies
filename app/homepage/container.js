@@ -26,6 +26,11 @@ export default function MovieListContainer({ movies }) {
 
     }, [popularMoviesResponse]);
 
+    // When server side rendering fails, movies will be undefined
+  if (!movies) {
+    return <div className='flex justify-center items-center'>Something went wrong please &nbsp; &nbsp;<button className='primary-btn' onClick={()=>{location.reload()}}>Retry</button></div>
+  }
+
     return (
         <div>
             <MovieList movies={moviesToRender} fetchNextPage={() => { fetchNextPage() }} isLoading={isLoading}/>

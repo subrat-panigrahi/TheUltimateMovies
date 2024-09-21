@@ -12,7 +12,6 @@ export default function MovieList({ movies, fetchNextPage, isLoading }) {
       </div>
     );
   }
-
   return (
     <div>
       <ul>
@@ -24,7 +23,7 @@ export default function MovieList({ movies, fetchNextPage, isLoading }) {
           </li>
         ))}
       </ul>
-      <div className="text-center">{(movies.page < movies.total_pages) && <button onClick={() => { fetchNextPage() }} className='primary-btn'> {isLoading ? 'Loading...' : 'Next'} </button>}</div>
+      <div className="text-center">{(movies?.page < movies?.total_pages) && <button onClick={() => { fetchNextPage() }} className='primary-btn'> {isLoading ? 'Loading...' : 'Next'} </button>}</div>
     </div>
   );
 }
