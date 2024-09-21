@@ -1,14 +1,16 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function SearchBar({ placeholder = 'Search...', onSearch, value }) {
   const [searchTerm, setSearchTerm] = useState(value || '');
-  console.log('searchTerm', searchTerm);
+  useEffect(() => {
+    setSearchTerm(value || '')
+  }, [value]);
 
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-      onSearch(searchTerm);
+    onSearch(searchTerm);
   };
 
   return (

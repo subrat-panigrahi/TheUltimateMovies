@@ -23,6 +23,7 @@ const config = {
         },
       });
     },
+    require('@tailwindcss/line-clamp'),
   ],
 };
 export default config;
