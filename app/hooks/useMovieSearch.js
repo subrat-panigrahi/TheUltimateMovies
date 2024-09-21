@@ -11,7 +11,6 @@ const useMovieSearch = () => {
             const url = `${MOVIE_SEARCH_API}?query=${query}&page=${page}`;
             setLoading(true);
             const res = await fetchWithTimeout(url);
-            console.log('res', res);
             setMovieSearchResponse(res);
             setLoading(false);
         } catch (e) {

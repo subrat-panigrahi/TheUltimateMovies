@@ -1,18 +1,22 @@
 'use client';
-import { useEffect } from 'react';
-
-export default function GlobalError({ error, reset }) {
+ 
+import { useEffect } from 'react'
+ 
+export default function Error({ error, reset }) {
   useEffect(() => {
-    //use sentry 
-    console.error("app error", error);
-  }, [error]);
-
+    console.error(error)
+  }, [error])
+ 
   return (
-    <html>
-      <body className="text-center">
-        <h2>Something went wrong during serach!</h2>
-        <button onClick={() => reset()}>Try again</button>
-      </body>
-    </html>
-  );
+    <div className='flex justify-center max-w-4xl mx-auto p-4 items-center' >
+      <h2>Something went wrong!</h2>
+      <button className='primary-btn'
+        onClick={
+          () => reset()
+        }
+      >
+        Try again
+      </button>
+    </div>
+  )
 }

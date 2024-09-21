@@ -6,8 +6,7 @@ import MovieList from '../components/MovieList';
 export default function MovieListContainer({ movies, type }) {
     const [moviesToRender, setMoviesToRender] = useState(movies);
     const { isLoading, popularMoviesResponse,getPopularMovies } = usePopularMovies();
-    const isTypeClient = type !== 'server';
-    console.log("isTypeClient", isTypeClient);
+    const isTypeClient = type !== 'server'; // will take the decision whether to fetch the first page data or not
 
     const fetchNextPage = async () => {
         getPopularMovies(moviesToRender.page + 1);
@@ -31,8 +30,6 @@ export default function MovieListContainer({ movies, type }) {
                     ...popularMoviesResponse,
                     results: [...prevMoviesToRender.results, ...popularMoviesResponse.results]
                 }));
-            } else {
-                console.log("here");
             }
     }, [popularMoviesResponse]);
 
@@ -44,7 +41,7 @@ export default function MovieListContainer({ movies, type }) {
     return (
 
         <div>
-            <div className='max-w-4xl mx-auto p-4 font-bold'>Popular movies</div>
+            <div className='max-w-4xl mx-auto pl-4 pr-4 font-bold'>Popular movies</div>
             <MovieList movies={moviesToRender} fetchNextPage={() => { fetchNextPage() }} isLoading={isLoading}/>
         </div>
     );
