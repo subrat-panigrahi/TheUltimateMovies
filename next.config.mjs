@@ -16,9 +16,9 @@ const nextConfig = {
                       default-src 'self';
                       script-src 'self' 'unsafe-eval' 'unsafe-inline';
                       style-src 'self' 'unsafe-inline';
-                      img-src 'self' 'image.tmdb.org';
+                      img-src 'self' 'https://image.tmdb.org';
                       font-src 'self';
-                      connect-src 'self' 'image.tmdb.org';
+                      connect-src 'self' 'https://image.tmdb.org';
                       frame-ancestors 'none';
                       object-src 'none';
                       base-uri 'self';
