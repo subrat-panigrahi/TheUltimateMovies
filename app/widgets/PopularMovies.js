@@ -6,20 +6,24 @@ import MovieList from '../components/MovieList';
 export default function MovieListContainer({ movies, type }) {
     const [moviesToRender, setMoviesToRender] = useState(movies);
     const { isLoading, popularMoviesResponse,getPopularMovies } = usePopularMovies();
+    const isTypeClient = type !== 'server';
+    console.log("isTypeClient", isTypeClient);
 
     const fetchNextPage = async () => {
         getPopularMovies(moviesToRender.page + 1);
     };
 
     useEffect(() => {
-        if(type == 'widget') {
+        if(isTypeClient) {
+            alert("1");
             getPopularMovies(1);
         } 
     }, []);
 
     useEffect(() => {
-        // in case of client side render, fetch the first page here
-            if(type == 'widget' && popularMoviesResponse.page === 1)  {
+        // in case of client side render, set the first page here
+            if(isTypeClient && popularMoviesResponse.page === 1)  {
+                alert(2);
                 setMoviesToRender(popularMoviesResponse);
             }   // append the value from second page
             else if (popularMoviesResponse.page > 1) {
@@ -33,8 +37,7 @@ export default function MovieListContainer({ movies, type }) {
     }, [popularMoviesResponse]);
 
     // When server side rendering fails, movies will be undefined
-
-    if(type !== 'widget' && !movies) {
+    if(!isTypeClient && !movies) {
         return <div className='flex justify-center items-center'>Something went wrong please &nbsp; &nbsp;<button className='primary-btn' onClick={()=>{location.reload()}}>Retry</button></div>
     }
   

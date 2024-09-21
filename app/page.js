@@ -18,7 +18,7 @@ async function MoviesPage() {
   const movies = await fetchPopularMovies();
   return (
     <div>
-      {<MovieListContainer movies={movies} />}
+      {<MovieListContainer movies={movies} type='server' />}
     </div>
   );
 }

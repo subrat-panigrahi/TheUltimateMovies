@@ -2,7 +2,6 @@
 import React from 'react';
 import { NO_RESULTS } from '../../lib/constants';
 import MovieCard from './MovieCard';
-import LazyLoad from 'react-lazyload';
 
 export default function MovieList({ movies, fetchNextPage, isLoading }) {
   if (movies?.results?.length === 0) {
@@ -17,9 +16,7 @@ export default function MovieList({ movies, fetchNextPage, isLoading }) {
       <ul>
         {movies?.results?.map((movie,index) => (
           <li key={movie.id}>
-            <LazyLoad key={movie.id} height={500} offset={500} unmountIfInvisible>
               <MovieCard movie={movie} isEager={index<4}/>
-            </LazyLoad>
           </li>
         ))}
       </ul>
