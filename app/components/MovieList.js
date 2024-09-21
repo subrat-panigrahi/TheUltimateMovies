@@ -16,10 +16,10 @@ export default function MovieList({ movies, fetchNextPage, isLoading }) {
   return (
     <div>
       <ul>
-        {movies?.results?.map((movie) => (
+        {movies?.results?.map((movie,index) => (
           <li key={movie.id}>
             <LazyLoad key={movie.id} height={500} offset={500} unmountIfInvisible>
-              <MovieCard movie={movie} />
+              <MovieCard movie={movie} isEager={index==0}/>
             </LazyLoad>
           </li>
         ))}
