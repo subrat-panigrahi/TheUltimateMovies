@@ -3,9 +3,8 @@ import React from 'react';
 import { NO_RESULTS } from '../../lib/constants';
 import MovieCard from './MovieCard';
 
-export default function MovieList({ movies, fetchNextPage, isLoading }) {
-console.log('mounting',movies);
-  if (movies && movies.results && movies.results.length === 0) {
+export default function MovieList({ movies, fetchNextPage, isLoading, title }) {
+  if (movies?.results?.length === 0) {
     return (
       <div className='px-2 text-center'>
         <h2>{NO_RESULTS}</h2>
@@ -16,7 +15,7 @@ console.log('mounting',movies);
   return (
     <div>
       <ul>
-        {movies && movies.results.map((movie) => (
+        { movies?.results?.map((movie) => (
           <li key={movie.id}>
             <MovieCard movie={movie} />
           </li>
