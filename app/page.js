@@ -1,5 +1,5 @@
 import fetchWithTimeout from '@/lib/utils';
-import MovieListContainer from './homepage/container';
+import MovieListContainer from './widgets/PopularMovies';
 // import Header from './components/Header';
 // import { Suspense } from 'react';
 

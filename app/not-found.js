@@ -8,7 +8,7 @@ export default function ErrorPage() {
     return (
         <div class="flex h-screen">
             <div class="m-auto text-center">
-                <ImageBuilder src='/images/logo_ultimate_movies.jpeg' width='200' height='200' alt='404' priority={true}/>
+                <ImageBuilder src='/images/logo_ultimate_movies.jpeg' width='200' height='200' alt='404' priority/>
                 <h3>{PAGE_NOT_FOUND}</h3>
                 <Link href="/">{HOME_PAGE}</Link>
             </div>
