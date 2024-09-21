@@ -18,10 +18,10 @@ export default function MovieListContainer({ movies, type }) {
     }, []);
 
     useEffect(() => {
-        function updateStore() {
+        // in case of client side render, fetch the first page here
             if(type == 'widget' && popularMoviesResponse.page === 1)  {
                 setMoviesToRender(popularMoviesResponse);
-            }   
+            }   // append the value from second page
             else if (popularMoviesResponse.page > 1) {
                 setMoviesToRender((prevMoviesToRender) => ({
                     ...popularMoviesResponse,
@@ -30,9 +30,6 @@ export default function MovieListContainer({ movies, type }) {
             } else {
                 console.log("here");
             }
-        }
-        updateStore();
-
     }, [popularMoviesResponse]);
 
     // When server side rendering fails, movies will be undefined
@@ -42,7 +39,9 @@ export default function MovieListContainer({ movies, type }) {
     }
   
     return (
+
         <div>
+            <div className='max-w-4xl mx-auto p-4 font-bold'>Popular movies</div>
             <MovieList movies={moviesToRender} fetchNextPage={() => { fetchNextPage() }} isLoading={isLoading}/>
         </div>
     );
