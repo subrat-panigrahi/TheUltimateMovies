@@ -16,6 +16,7 @@ const config = {
     },
   },
   plugins: [
+    require('@tailwindcss/line-clamp'),
     function ({ addComponents }) {
       addComponents({
         '.primary-btn': {
@@ -23,7 +24,6 @@ const config = {
         },
       });
     },
-    require('@tailwindcss/line-clamp'),
   ],
 };
 export default config;
