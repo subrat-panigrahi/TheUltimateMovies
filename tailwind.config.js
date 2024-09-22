@@ -13,6 +13,9 @@ const config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      backgroundImage: {
+        'moviePoster': "url(/images/movieRoll.svg)",
+      }
     },
   },
   plugins: [
