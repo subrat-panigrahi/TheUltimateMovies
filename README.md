@@ -1,15 +1,23 @@
 
 ## Getting Started
 
-Install NODE 18.18
+1) Install NODE 18.18
 
-Clone the project to local
+2) Clone the project to local
 
-please add these lines in .env.local
+3) Create a .env.local file in root directory using
 
-npm install 
+    touch .env.local
 
-First, run the development server:
+    add the following lines and save
+
+    NODE_TLS_REJECT_UNAUTHORIZED=0
+    TMDB_API_KEY=52356ee2f53eb5738f1d63e73329f442
+
+
+4) npm install 
+
+5) Run the development server:
 
 ```bash
 npm run dev
