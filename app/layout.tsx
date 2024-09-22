@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <link rel="preconnect" href="https://image.tmdb.org"/>
-      <link rel="preload" href="/images/logo_ultimate_movies.jpeg"/>
+      <link rel="preload" href="/images/logo_ultimate_movies.jpeg" as='image'/>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased p-4`}
       >

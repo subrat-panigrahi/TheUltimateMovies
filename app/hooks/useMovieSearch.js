@@ -2,6 +2,7 @@ import { useState } from "react";
 import { MOVIE_SEARCH_API } from '../../lib/constants';
 import fetchWithTimeout from '../../lib/utils';
 
+// Custom hook to fetch movie search results
 const useMovieSearch = () => {
     const [isLoading, setLoading] = useState(false);
     const [movieSearchResponse, setMovieSearchResponse] = useState({});

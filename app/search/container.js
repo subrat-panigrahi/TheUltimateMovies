@@ -18,8 +18,6 @@ export default function SearchPageContainer({ movies, query }) {
         ...movieSearchResponse,
         results: [...moviesToRender.results, ...movieSearchResponse.results]
       });
-    } else {
-      console.log('movieSearchResponse', movieSearchResponse);
     }
   }, [movieSearchResponse]);
 

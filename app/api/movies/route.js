@@ -1,7 +1,7 @@
-const POPULAR_MOVIES = 'https://api.themoviedb.org';
+import { MOVIES_DOMAIN } from '../../../lib/constants';
 export async function GET(request) {
     try {
-      const popularMoviesUrl = new URL('/3/movie/popular', POPULAR_MOVIES);
+      const popularMoviesUrl = new URL('/3/movie/popular', MOVIES_DOMAIN);
       new URL(request.url).searchParams.forEach((value, key) => {
         popularMoviesUrl.searchParams.append(key, value);
       });

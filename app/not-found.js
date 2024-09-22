@@ -4,6 +4,7 @@ import React from 'react';
 import ImageBuilder from '../lib/components/ImageBuilder';
 import { PAGE_NOT_FOUND, HOME_PAGE } from '../lib/constants';
 
+//Custom page not found component
 export default function ErrorPage() {
     return (
         <div class="flex h-screen">

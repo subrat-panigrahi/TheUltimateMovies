@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 
+// Search form submission, value is passed from parent component
 export default function SearchBar({ placeholder = 'Search...', onSearch, value }) {
   const [searchTerm, setSearchTerm] = useState(value || '');
   useEffect(() => {

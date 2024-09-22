@@ -9,7 +9,7 @@ export default function Header() {
   const searchParams = useSearchParams();
 
   // Specify the type of searchTerm to be string or null
-  const appendQuery = (searchTerm: string | null) => {
+  const appendQuery = (searchTerm) => {
     if (!searchTerm) {
       router.push('/');
     } else {
@@ -29,7 +29,7 @@ export default function Header() {
       />
       <Searchbar
         value={searchParams.get('query') || ''}
-        onSearch={(searchTerm: string) => {
+        onSearch={(searchTerm) => {
           appendQuery(searchTerm);
         }}
       />

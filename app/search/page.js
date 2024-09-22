@@ -1,9 +1,10 @@
 import SearchPageContainer from './container';
 import fetchWithTimeout from '@/lib/utils';
+import { MOVIES_DOMAIN } from '@/lib/constants';
 
 async function fetchSearchMovies(query) {
   try{
-  const response = await fetchWithTimeout(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.TMDB_API_KEY}&query=${query}`, { cache: 'no-store' });
+  const response = await fetchWithTimeout(`${MOVIES_DOMAIN}/3/search/movie?api_key=${process.env.TMDB_API_KEY}&query=${query}`, { cache: 'no-store' });
   return response;
   } catch (e) {
     console.error('error on fetchSearchMovies', e);

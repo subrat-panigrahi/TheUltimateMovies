@@ -1,24 +1,23 @@
 import fetchWithTimeout from '@/lib/utils';
-import MovieListContainer from './widgets/PopularMovies';
-// import Header from './components/Header';
-// import { Suspense } from 'react';
+import PopularMovies from './widgets/PopularMovies';
+import { MOVIES_DOMAIN } from '@/lib/constants';
 
 async function fetchPopularMovies() {
   try {
-    const response = await fetchWithTimeout(`https://api.themoviedb.org/3/movie/popular?language=en-US&api_key=${process.env.TMDB_API_KEY}`, { next: { revalidate: 86400 } });
+    const response = await fetchWithTimeout(`${MOVIES_DOMAIN}/3/movie/popular?language=en-US&api_key=${process.env.TMDB_API_KEY}&page=uh`, { next: { revalidate: 86400 } });
     return response;
   }
   catch (e) {
-    // winston can be used
     console.log("api call error", e);
   }
 };
 
+// Statically generated page
 async function MoviesPage() {
   const movies = await fetchPopularMovies();
   return (
     <div>
-      {<MovieListContainer movies={movies} type='server' />}
+      {<PopularMovies movies={movies} />}
     </div>
   );
 }

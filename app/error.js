@@ -1,6 +1,7 @@
 'use client';
 import { useEffect } from 'react';
 
+//Catches all kind of uncought errors.
 export default function GlobalError({ error, reset }) {
   useEffect(() => {
     //use sentry 

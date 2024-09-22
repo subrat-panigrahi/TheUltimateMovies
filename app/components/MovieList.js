@@ -2,7 +2,7 @@
 import React from 'react';
 import { NO_RESULTS } from '../../lib/constants';
 import MovieCard from './MovieCard';
-
+// used as an intermediary layer where pagination is handled and can be used for renderAsProp if required in future
 export default function MovieList({ movies, fetchNextPage, isLoading }) {
   if (movies?.results?.length === 0) {
     return (

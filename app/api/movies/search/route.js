@@ -1,5 +1,4 @@
-
-const MOVIES_DOMAIN = 'https://api.themoviedb.org';
+import { MOVIES_DOMAIN } from '../../../../lib/constants';
 export async function GET(request) {
     try {
       const moviesUrl = new URL('/3/search/movie', MOVIES_DOMAIN);
