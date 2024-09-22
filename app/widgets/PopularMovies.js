@@ -29,9 +29,6 @@ export default function PopularMovies({ movies }) {
                 }));
             }
     }, [popularMoviesResponse]);
-
-    console.log("rednered pop");
-
     // When server side rendering fails, movies will be undefined
     if(error || !moviesToRender) {
         return <div className='flex justify-center items-center'>Something went wrong please &nbsp; &nbsp;<button className='primary-btn' onClick={()=>{location.reload()}}>Retry</button></div>

@@ -27,7 +27,7 @@ const nextConfig = {
                 ]
               },
               {
-                source: '/:path*\\.(jpg|jpeg|png|gif|webp|svg)',
+                source: '/images/logo_ultimate_movies.jpeg',
                 headers: [
                   {
                     key: 'Cache-Control',
