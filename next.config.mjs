@@ -24,17 +24,17 @@ const nextConfig = {
                       base-uri 'self';
                     `.replace(/\s{2,}/g, ' ').trim()
                   },
-                  {
-                    source: '/:path*',
-                    headers: [
-                      {
-                        key: 'Cache-Control',
-                        value: 'public, max-age=31536000, immutable',
-                      },
-                    ],
-                  },
                 ]
-              }
+              },
+              {
+                source: '/:path*',
+                headers: [
+                  {
+                    key: 'Cache-Control',
+                    value: 'public, max-age=31536000, immutable',
+                  },
+                ],
+              },
             ]
           }
 };
