@@ -15,6 +15,7 @@ async function fetchPopularMovies() {
 // dynamically generated page
 async function MoviesPage() {
   const movies = await fetchPopularMovies();
+  console.log("movies", movies);
   return (
     <div>
       {<PopularMovies movies={movies} />}
