@@ -14,6 +14,7 @@ async function fetchSearchMovies(query) {
 export default async function MoviesPage(request) {
     const query = request.searchParams['query']|| '';
     const movies = await fetchSearchMovies(query);
+    console.log("search movies", movies);
     return (
       <div>
         {<SearchPageContainer movies={movies} query={query}/>}

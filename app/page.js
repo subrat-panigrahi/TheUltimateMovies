@@ -12,7 +12,7 @@ async function fetchPopularMovies() {
   }
 };
 
-// dynamically generated page
+// statically generated page
 async function MoviesPage() {
   const movies = await fetchPopularMovies();
   console.log("movies", movies);
