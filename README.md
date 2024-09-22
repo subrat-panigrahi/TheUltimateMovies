@@ -1,9 +1,11 @@
 
 ## Getting Started
 
+Install NODE 18.18
+
 Clone the project to local
 
-Install NODE 18.18
+please add these lines in .env.local
 
 npm install 
 
