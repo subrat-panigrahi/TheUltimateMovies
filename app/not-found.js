@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 import ImageBuilder from '../lib/components/ImageBuilder';
 import { PAGE_NOT_FOUND, HOME_PAGE } from '../lib/constants';
-import logo from './logo_ultimate_movies.jpeg';
+import logo from './logo.webp';
 
 //Custom page not found component
 export default function ErrorPage() {

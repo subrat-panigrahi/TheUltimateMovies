@@ -3,7 +3,7 @@
 import Searchbar from './Searchbar';
 import ImageBuilder from '../../lib/components/ImageBuilder';
 import { useRouter, useSearchParams } from 'next/navigation';
-import logo from '../logo_ultimate_movies.jpeg';
+import logo from '../logo.webp';
 
 export default function Header() {
   const router = useRouter();
