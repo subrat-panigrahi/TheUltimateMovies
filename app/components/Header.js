@@ -26,6 +26,7 @@ export default function Header() {
         height="100"
         fallbackSrc="/images/fallbackImage.jpg"
         alt="logo"
+        priority
       />
       <Searchbar
         value={searchParams.get('query') || ''}
