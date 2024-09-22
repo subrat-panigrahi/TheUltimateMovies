@@ -26,6 +26,7 @@ export default function Header() {
         height="100"
         fallbackSrc="/images/fallbackImage.jpg"
         alt="logo"
+        loading="eager"
         priority
       />
       <Searchbar
