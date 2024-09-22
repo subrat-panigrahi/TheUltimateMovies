@@ -12,7 +12,7 @@ export default function PopularMovies({ movies }) {
     };
 
     useEffect(() => {
-        if(!movies) { // for clientside rendering.
+        if(!movies) { // for client side rendering.
             getPopularMovies(1);
         } 
     }, []);
