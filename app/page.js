@@ -11,7 +11,7 @@ async function fetchPopularMovies() {
 
 // Statically generated page
 export default async function MoviesPage() {
-  data = await fetchPopularMovies();
+  const data = await fetchPopularMovies();
 
   return (
     <div>
