@@ -1,21 +1,25 @@
-// import fetchWithTimeout from '@/lib/utils';
+import fetchWithTimeout from '@/lib/utils';
 import PopularMovies from './widgets/PopularMovies';
-import fetch from 'node-fetch';
 import { MOVIES_DOMAIN } from '@/lib/constants';
 
 async function fetchPopularMovies() {
-    const response = await fetch(`${MOVIES_DOMAIN}/3/movie/popular?language=en-US&api_key=${process.env.TMDB_API_KEY}`, { next: { revalidate: 86400 } });
-    let data = await response.json();
-    return data;
+  try {
+    const response = await fetchWithTimeout(`${MOVIES_DOMAIN}/3/movie/popular?language=en-US&api_key=${process.env.TMDB_API_KEY}`, { next: { revalidate: 86400 } });
+    return response;
+  }
+  catch (e) {
+    console.log("api call error", e);
+  }
 };
 
-// Statically generated page
-export default async function MoviesPage() {
-  const data = await fetchPopularMovies();
-
+// dynamically generated page
+async function MoviesPage() {
+  const movies = await fetchPopularMovies();
   return (
     <div>
-      <PopularMovies movies={data} />
+      {<PopularMovies movies={movies} />}
     </div>
   );
 }
+
+export default MoviesPage;
