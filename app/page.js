@@ -4,7 +4,7 @@ import { MOVIES_DOMAIN } from '@/lib/constants';
 
 async function fetchPopularMovies() {
   try {
-    const response = await fetchWithTimeout(`${MOVIES_DOMAIN}/3/movie/popular?language=en-US&api_key=${process.env.TMDB_API_KEY}&page=uh`, { next: { revalidate: 86400 } });
+    const response = await fetchWithTimeout(`${MOVIES_DOMAIN}/3/movie/popular?language=en-US&api_key=${process.env.TMDB_API_KEY}`, { next: { revalidate: 86400 } });
     return response;
   }
   catch (e) {
