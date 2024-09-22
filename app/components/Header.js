@@ -3,6 +3,7 @@
 import Searchbar from './Searchbar';
 import ImageBuilder from '../../lib/components/ImageBuilder';
 import { useRouter, useSearchParams } from 'next/navigation';
+import logo from '../logo_ultimate_movies.jpeg';
 
 export default function Header() {
   const router = useRouter();
@@ -21,7 +22,7 @@ export default function Header() {
     <div className="max-w-4xl mx-auto p-2 sticky top-0 bg-background">
       <ImageBuilder
         className="p-2"
-        src="/images/logo_ultimate_movies.jpeg"
+        src={logo}
         width="100"
         height="100"
         fallbackSrc="/images/fallbackImage.jpg"

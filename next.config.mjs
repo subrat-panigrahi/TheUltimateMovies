@@ -25,16 +25,7 @@ const nextConfig = {
                     `.replace(/\s{2,}/g, ' ').trim()
                   },
                 ]
-              },
-              {
-                source: '/images/logo_ultimate_movies.jpeg',
-                headers: [
-                  {
-                    key: 'Cache-Control',
-                    value: 'public, max-age=31536000, immutable',
-                  },
-                ],
-              },
+              }
             ]
           }
 };
