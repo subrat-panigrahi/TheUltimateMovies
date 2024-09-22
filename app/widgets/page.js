@@ -1,5 +1,5 @@
 // import fetchWithTimeout from '@/lib/utils';
-import PopularMovies from './widgets/PopularMovies';
+import PopularMovies from './PopularMovies';
 import fetch from 'node-fetch';
 // import { MOVIES_DOMAIN } from '@/lib/constants';
 
