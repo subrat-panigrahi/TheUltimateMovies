@@ -51,10 +51,3 @@ export const Small: Story = {
     label: 'Button',
   },
 };
-
-export const MovieCard: Story = {
-  args: {
-    primary: false,
-    label: "Button"
-  }
-};
