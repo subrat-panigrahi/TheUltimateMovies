@@ -1,6 +1,4 @@
 'use client';
-// import { useState } from 'react';
-// import Image from 'next/image';
 import ImageBuilder from '../../lib/components/ImageBuilder';
 import TextLabel from '../../lib/components/TextLabel';
 export default function MovieCard({ movie, isEager }) {
