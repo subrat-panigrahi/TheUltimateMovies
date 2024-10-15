@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react';
 import { NO_RESULTS } from '../../lib/constants';
 import MovieCard from './MovieCard';
-import ReactQueryTest from './ReactQueryTest';
 // used as an intermediary layer where pagination is handled and can be used for renderAsProp if required in future
 export default function MovieList({ movies, fetchNextPage, isLoading }) {
   useEffect(() => {
@@ -33,7 +32,6 @@ export default function MovieList({ movies, fetchNextPage, isLoading }) {
           </li>
         ))}
       </ul>
-        <ReactQueryTest />
       <div className="text-center">{(movies?.page < movies?.total_pages) && <button onClick={() => { fetchNextPage() }} className='primary-btn'> {isLoading ? 'Loading...' : 'Next'} </button>}</div>
     </div>
   );
